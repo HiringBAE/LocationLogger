@@ -7,11 +7,7 @@ val localSdkKey = (project.findProperty("LOCALSDK_SDK_KEY") as? String).orEmpty(
 
 android {
     namespace = "com.example.locationlogger"
-    compileSdk {
-        version = release(36) {
-            minorApiLevel = 1
-        }
-    }
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.localsdk.waypoint"
