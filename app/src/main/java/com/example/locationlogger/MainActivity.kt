@@ -98,7 +98,7 @@ class MainActivity : ComponentActivity() {
                 runOnUiThread {
                     uiState = uiState.copy(
                         isTracking = false,
-                        lastError = error.message ?: error.toString()
+                        lastError = error.toString()
                     )
                 }
             }

@@ -14,7 +14,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.example.locationlogger"
+        applicationId = "com.localsdk.waypoint"
         minSdk = 24
         targetSdk = 36
         versionCode = 1
