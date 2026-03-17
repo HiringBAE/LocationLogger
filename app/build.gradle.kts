@@ -3,6 +3,8 @@ plugins {
     alias(libs.plugins.kotlin.compose)
 }
 
+val localSdkKey = (project.findProperty("LOCALSDK_SDK_KEY") as? String).orEmpty()
+
 android {
     namespace = "com.example.locationlogger"
     compileSdk {
@@ -22,7 +24,11 @@ android {
     }
 
     buildTypes {
+        debug {
+            buildConfigField("String", "LOCALSDK_SDK_KEY", "\"$localSdkKey\"")
+        }
         release {
+            buildConfigField("String", "LOCALSDK_SDK_KEY", "\"$localSdkKey\"")
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -36,7 +42,9 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
+
 }
 
 dependencies {
@@ -48,6 +56,7 @@ dependencies {
     implementation(libs.androidx.compose.ui.graphics)
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.material3)
+    implementation("com.localsdk:core:0.0.1-alpha")
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">LocationLogger</string>
+    <string name="sdk_key_missing">Set the LOCALSDK_SDK_KEY Gradle property before starting tracking.</string>
+    <string name="sdk_initialized">SDK initialized</string>
+    <string name="sdk_not_initialized">SDK not initialized</string>
+    <string name="foreground_permission_missing">Foreground location permission missing</string>
 </resources>
